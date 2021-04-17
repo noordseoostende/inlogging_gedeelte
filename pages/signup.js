@@ -179,10 +179,9 @@ function Signup() {
               setUsername(e.target.value);
               if (regexUserName.test(e.target.value)) {
                 setUsernameAvailable(true);
-              } 
-              // else {
-              //   setUsernameAvailable(false);
-              // }
+              } else {
+                setUsernameAvailable(false);
+              }
             }}
             fluid
             icon={usernameAvailable ? "check" : "close"}
@@ -202,8 +201,7 @@ function Signup() {
             content="Signup"
             type="submit"
             color="orange"
-            disabled={submitDisabled}
-            // disabled={submitDisabled || !usernameAvailable}
+            disabled={submitDisabled || !usernameAvailable}
           />
         </Segment>
       </Form>
